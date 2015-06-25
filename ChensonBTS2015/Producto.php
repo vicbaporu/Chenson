@@ -384,7 +384,7 @@ echo "Color: ". $color;
             <!-- <div class="panel-heading"><p class="text-center "><?php echo $reg['Sku'];?></p></div> -->
               <div class="panel-body">
 
-                <a href="Detalle.php" target="_top" >
+                <a href="Detalle.php?sku=<?php echo $reg['Sku'] ?>" target="_top" >
                   <?php if (file_exists('img/Producto/'.$reg['Sku'].'/Frente.jpg')): ?>
                     <img src="img/Producto/<?php echo $reg['Sku'];?>/Frente.jpg" alt="<?php echo $reg['Sku'];?>" name="frente" class="img-responsive" onmouseover="MM_swapImage('frente','','img/Producto/<?php echo $reg['Sku'];?>/Atras.jpg',1)" onmouseout="MM_swapImgRestore()" ) />
                   <?php else: ?>

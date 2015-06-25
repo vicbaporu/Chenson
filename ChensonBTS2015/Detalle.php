@@ -1,8 +1,26 @@
+<?php 
+include("conexion.php");
+
+$sku    = $_REQUEST['sku'];
+
+$query  = "select * from chenson_bts_2015 where sku='" . $sku . "'";
+$datos  =  mysqli_query($conexion,$query) or die("Problemas al filtrar sus resultados:".mysql_error());
+
+//print_r($datos);
+
+$reg = mysqli_fetch_array($datos);
+
+?> 
+
+
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<title>Chenson Back to school 2015</title>
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="css/style_600px.css" rel='stylesheet' media="(max-width:640px)" type='text/css' />
 <!--Menu responsivo-->
@@ -86,11 +104,11 @@ function MM_swapImage() { //v3.0
      <!--Producto-->
      <div id="Descripcion">
      	<img src="img/Licencias/smb.png" class="logoDesc" />
-     	<p class="coleccion">Malibú</p>
-        <p class="sku">1860546-3</p>
-        <p class="sku">$499.00</p>
+     	<p class="coleccion"><?php echo $reg['Coleccion'] ?></p>
+        <p class="sku"><?php echo $reg['Sku'] ?></p>
+        <p class="sku">$<?php echo $reg['Precio'] ?></p>
              <div class="DescLarga">
-     			<p align="justify">La de la mochila azul, la de ojitos dormilones, me dejo gran inquietud, y bajas calificaciones...a recreo quiero salir, no me diviwerto con nada, no puedo leer ni escribir, me hace falta su mirada...
+     			<p align="justify"><?php echo $reg['DescripcionLarga'] ?>
                 </p>
                 <br />
                <p class="proporcion">Proporción:</p> 
@@ -148,12 +166,14 @@ function MM_swapImage() { //v3.0
     <td width="50%" colspan="2" class="HeaderEsp">Materiales:</td>
   </tr>
   <tr>
-    <td>44 CM</td>
-    <td>44 CM</td>
-    <td>44 CM</td>
-    <td>25 L.</td>
+    <td><?php echo $reg['Alto'] ?></td>
+    <td><?php echo $reg['Ancho'] ?></td>
+    <td><?php echo $reg['Largo'] ?></td>
+    <td><?php echo $reg['Litros'] ?></td>
     <td width="50%" class="Materiales">
-      <p>Forro: Algodón, Exterior: Algodón</p></td>
+      <p><?php echo $reg['Material1'] ?></p></td>
+      <p><?php echo $reg['Material2'] ?></p></td>
+      <p><?php echo $reg['Material3'] ?></p></td>
   </tr>
   </table>
 
