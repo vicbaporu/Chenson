@@ -46,7 +46,7 @@
 <script src="js/jquery.flexslider-min.js"></script>
 <!--Termina slider-->
 
-<title>Chenson Back to school 2015</title>
+<title>Chenson Back to school 2015 test</title>
 </head>
 
 <body>
