@@ -80,8 +80,6 @@ function MM_swapImage() { //v3.0
    ?>
   <?php $licencias   = getLicencia($target,$genero,$cuerpo); ?>
 
-  <?php //$cuerpos     = getCuerpo($target,$genero,$cuerpo); ?>
-
   <?php $lineas      = getLinea($target,$genero,$cuerpo); ?>
 
   <?php $colores     = getColor($target,$genero,$cuerpo); ?>
@@ -95,18 +93,6 @@ function MM_swapImage() { //v3.0
       <br /><br /><br />
         	<p class="HeaderPie">Filtrar por:</p>
         	<ul id="Filtro">
-          <!--
-                <li><a href="#">Cuerpo</a>
-                    <ul>
-                        <?php while($reg=mysqli_fetch_array($cuerpos))
-                        {?>
-                          <li><a href="galeria.php?target=&genero=&cuerpo=<?php echo $cuerpo ?>&licencia=&linea=&color="><?php echo $reg['cuerpo']; ?></a></li>
-                              
-                                          <?php 
-                        } ?>
-                    </ul>
-                </li>
-          -->
                 <li><a href="#">Licencia</a>
                     <ul>
                       <?php while($reg=mysqli_fetch_array($licencias))
@@ -141,9 +127,8 @@ function MM_swapImage() { //v3.0
      <!--Termina Columna filtro-->
      <!--Inicia Galeria de productos--> 
      
-     <?php echo $_REQUEST['genero'] ?>
-     <?php echo "<br><br><br>" ?>
-    <?php print_r($_POST);   ?>
+     
+    
     <?php 
     if (isset($_POST['busqueda']))
       $busqueda = $_POST['busqueda'];

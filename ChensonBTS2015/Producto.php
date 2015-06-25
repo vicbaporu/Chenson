@@ -291,7 +291,7 @@ foreach ($total as $item )
 
 //Pruebas
 
-echo "<br><br><br>".$query."<br>";
+//echo "<br><br><br>".$query."<br>";
 /*
 //echo "licencia: ".$licencia;
 echo "<br>";
@@ -365,14 +365,14 @@ echo "Color: ". $color;
     	$registros=mysqli_query($conexion,$query) or die("Problemas al filtrar sus resultados:".mysql_error());
       
 			$num_paginas=intval($numRows)/18;
-      echo "Num resultados: "; 
-      echo $numRows; 
-			echo "<br>";
+      //echo "Num resultados: "; 
+      //echo $numRows; 
+			//echo "<br>";
 			if($num_paginas>=$num_paginas)
 			   $num_paginas=intval($num_paginas)+1; 
 			   
          
-       print_r($_GET);
+      //  print_r($_GET);
       paginacion($num_paginas);
 
 
