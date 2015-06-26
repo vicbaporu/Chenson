@@ -51,10 +51,10 @@
                         </ul>
                     </div>
                     <div class="col4 highlighted">
-                        <h3><a href="galeria.php?target=preescolar&genero=&cuerpo=&licencia=&linea=&color=">Teens</a></h3>
+                        <h3><a href="galeria.php?target=teens&genero=&cuerpo=&licencia=&linea=&color=">Teens</a></h3>
                     </div>
                     <div class="col1">
-                        <h3><a href="galeria.php?target=teens&genero=nina&cuerpo=&licencia=&linea=&color=">Teens nina</a></h3>
+                        <h3><a href="galeria.php?target=teens&genero=nina&cuerpo=&licencia=&linea=&color=">Teens niña</a></h3>
                         <ul>
                             <li><a href="galeria.php?target=teens&genero=nina&cuerpo=mochila&licencia=&linea=&color=">Mochila</a></li>
                             <li><a href="galeria.php?target=teens&genero=nina&cuerpo=mensajero&licencia=&linea=&color=">Mensajero</a></li>
@@ -64,7 +64,7 @@
                         </ul>
                     </div>
                     <div class="col1">
-                        <h3>Primaria Niño</h3>
+                        <h3><a href="galeria.php?target=teens&genero=nino&cuerpo=&licencia=&linea=&color=">Teens niño</a></h3>
                         <ul>
                             <li><a href="#">Mochila</a></li>
                             <li><a href="#">Mensajero</a></li>

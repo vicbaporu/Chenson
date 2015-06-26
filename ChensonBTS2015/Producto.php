@@ -24,8 +24,6 @@ function paginacion($num_paginas)
 	    	<div id='paginador'>
         	<p>Página:</p>";          
 		$var=1;
-
-
 ?>
 
 
@@ -47,20 +45,62 @@ function paginacion($num_paginas)
       if (isset($_REQUEST['busqueda']))
         $busqueda = $_REQUEST['busqueda'];
 
-            while($var<=$num_paginas)
-    {  
-    ?> <li> <?php
+      while($var<=$num_paginas)
+      {
+        if(isset($_REQUEST['pagina'])) 
+        {
+          if(intval($_REQUEST['pagina']) == $var)
+          {
+            ?> <li class="active"> <?php
 
-      echo "<a href='producto.php?target=".$target."&genero=".$genero."&cuerpo=".$cuerpo."&pagina=".$var.""."&licencia=".$licencia."&linea=".$linea."&color=".$color."'>$var </a>";
+            echo "<a href='producto.php?target=".$target."&genero=".$genero."&cuerpo=".$cuerpo."&pagina=".$var.""."&licencia=".$licencia."&linea=".$linea."&color=".$color."'>$var </a>";
 
-      $var++;
-      ?></li>
-      <?php
-    }
+            $var++;
+            ?></li>
+            <?php
+          }
+          else
+          {
+            ?> <li> <?php
+
+            echo "<a href='producto.php?target=".$target."&genero=".$genero."&cuerpo=".$cuerpo."&pagina=".$var.""."&licencia=".$licencia."&linea=".$linea."&color=".$color."'>$var </a>";
+
+            $var++;
+            ?></li>
+            <?php
+          }
+        }
+        else
+        {
+          if(1 == $var)
+          {
+            ?> <li class="active"> <?php
+
+            echo "<a href='producto.php?target=".$target."&genero=".$genero."&cuerpo=".$cuerpo."&pagina=".$var.""."&licencia=".$licencia."&linea=".$linea."&color=".$color."'>$var </a>";
+
+            $var++;
+            ?></li>
+            <?php
+          }
+          else
+          {
+            ?> <li> <?php
+
+            echo "<a href='producto.php?target=".$target."&genero=".$genero."&cuerpo=".$cuerpo."&pagina=".$var.""."&licencia=".$licencia."&linea=".$linea."&color=".$color."'>$var </a>";
+
+            $var++;
+            ?></li>
+            <?php
+          }
+        }
+          
+      
+      }
     ?>
 
       
     </ul>
+      
   </nav>
 
 <?php
@@ -301,7 +341,12 @@ echo "Color: ". $color;
 
 	if ($query=="select *from chenson_bts_2015")
 	$query="select *from chenson_bts_2015 limit 0,18";
- ?>
+ 
+?>
+
+
+<br />
+
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

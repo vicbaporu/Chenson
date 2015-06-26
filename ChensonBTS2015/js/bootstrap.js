@@ -898,7 +898,7 @@ if (typeof jQuery === 'undefined') {
 
   // APPLY TO STANDARD DROPDOWN ELEMENTS
   // ===================================
-
+//Proceso dropdown
   $(document)
     .on('click.bs.dropdown.data-api', clearMenus)
     .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })

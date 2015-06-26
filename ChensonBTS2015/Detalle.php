@@ -6,15 +6,24 @@ $sku    = $_REQUEST['sku'];
 $query  = "select * from chenson_bts_2015 where sku='" . $sku . "'";
 $datos  =  mysqli_query($conexion,$query) or die("Problemas al filtrar sus resultados:".mysql_error());
 
-//print_r($datos);
-
 $reg = mysqli_fetch_array($datos);
 
+
+$query            = "select count(id) as num from chenson_bts_2015 where coleccion='" . $reg['Coleccion'] . "' and sku<>  '" . $reg['Sku'] . "'";
+$numRelacionados  = mysqli_query($conexion,$query) ;
+  $num              = mysqli_fetch_array($numRelacionados);
+
+if(intval($num['num']) >= 1)
+{
+  $query         = "select * from chenson_bts_2015 where coleccion='" . $reg['Coleccion'] . "' and sku<>  '" . $reg['Sku'] . "'";
+  $relacionados  = mysqli_query($conexion,$query) ;
+}
+
+//print_r($datos);
+
+
+
 ?> 
-
-
-
-
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -117,10 +126,19 @@ function MM_swapImage() { //v3.0
               <br /><br /><br /><br /><br />
               <div class="relacionados">
               <p class="">Más de esta colección:</p>
-              	<img src="img/Producto/ch50147-3.jpg" width="20%" />
-                <img src="img/Producto/ch34105-3.jpg" width="20%" />
-                <img src="img/Producto/ch50136-3.jpg" width="20%" />
-                <img src="img/Producto/co59586-3.jpg" width="20%" />
+                <?php 
+
+                if(isset($relacionados))
+                {
+
+                  while($reg=mysqli_fetch_array($relacionados))
+                  {?>
+                	<img src="img/Producto/<?php echo $reg['Sku'] ?>.jpg" width="20%" />
+                  <?php
+                  }
+
+                }?> 
+
               </div>
      			</div>
 		<br /><br />

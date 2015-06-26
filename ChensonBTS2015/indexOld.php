@@ -51,9 +51,9 @@
 
 <body>
 	
-
-<?php include_once('secciones/MenuSuperior.php'); ?>
-
+    
+<?php include_once('secciones/menuafuera.php'); ?>
+<br /><br /><br /><br /><br /><br /><br />   
     <!--Slider-->
     <div class="flex-container">
         <div class="flexslider">

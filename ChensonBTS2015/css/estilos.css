@@ -1,0 +1,38 @@
+@font-face{
+		font-family:menu;
+	src:url('../Fonts/Please write me a song.ttf') format("truetype");
+		}
+.navTop
+{
+	margin-top: 5%;
+	font-size: 25px;	
+
+    font-family: menu;	
+}
+.imgNav
+{
+	max-height: 100px;
+	width: auto;
+}
+
+.top	
+{
+	margin-top: 10%;
+}
+
+.blue
+{
+	background-color: rgba(0 ,40, 86,.3);
+}
+.bold
+{
+	font-weight: bold;
+}
+.letraMenu
+{
+	font-size: 18px;
+}
+.letraMenuSup
+{
+	font-size: 28px;
+}
